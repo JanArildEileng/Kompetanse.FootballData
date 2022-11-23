@@ -1,0 +1,44 @@
+<p>league-table</p>
+
+
+
+
+
+<table>
+    <thead>
+        <td>teamName</td>
+        <td>played</td>
+        <td>wins</td>
+        <td>draws</td>
+        <td>losts</td>
+        <td>points</td>
+        
+    </thead>
+  
+<tr *ngFor="let r of teams$ | async ">
+    <td>
+        {{r.teamName}} 
+    </td>
+    <td>
+        {{r.played()}}
+    </td>
+    <td>
+        {{r.wins()}} 
+    </td>
+    <td>
+        {{r.draws()}} 
+    </td>
+    <td>
+        {{r.losts()}} 
+    </td>
+    <td>
+        {{r.points()}} 
+    </td>
+
+  
+
+</tr>
+
+</table>
+
+

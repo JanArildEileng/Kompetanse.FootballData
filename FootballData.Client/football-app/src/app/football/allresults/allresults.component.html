@@ -1,0 +1,7 @@
+<p>allresults works!</p>
+
+<ul>
+    <li *ngFor="let r of allResults$ | async " >
+        {{r.matchNumber}}:({{r.datePlayed}}) {{r.homeTeam}}-{{r.awayTeam}} {{r.hg}}-{{r.ag}}
+    </li>
+</ul>
