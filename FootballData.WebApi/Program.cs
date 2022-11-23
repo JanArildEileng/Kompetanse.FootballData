@@ -12,6 +12,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ReadResultsFromFileService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyAllowAllHeadersPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200");
+                   
+        });
+});
+
 
 
 var app = builder.Build();
@@ -24,7 +34,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("MyAllowAllHeadersPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
